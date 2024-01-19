@@ -19,6 +19,7 @@ export class CoreComponent {
   componetList = computed(() => {
     return Object.keys(this.inviteConfig());
   });
+
   inviteConfig = toSignal(
     this.weddingConfigService.getWeddingConfig('65a0b97fc7f02cbbbee982c5'),
     { initialValue: {} as InviteConfiguration },
