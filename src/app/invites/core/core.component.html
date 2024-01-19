@@ -1,3 +1,14 @@
 <div>
-  <app-start-banner></app-start-banner>
+  @for (component of componetList(); track component) {
+    @if (inviteConfig()[component] && inviteConfig()[component].config) {
+      <ng-container
+        *ngComponentOutlet="
+          inviteComponents[component];
+          inputs: inviteConfig()[component]?.config
+        "
+      />
+    } @else if (inviteConfig()[component]) {
+      <ng-container *ngComponentOutlet="inviteComponents[component]" />
+    }
+  }
 </div>
