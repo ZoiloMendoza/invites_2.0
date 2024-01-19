@@ -1,30 +1,16 @@
-<body class="bg-gray-200 p-8">
+<!-- dashboard.component.html -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-semibold mb-4">Tabla de Datos</h1>
 
-    <div class="bg-white p-6 rounded-lg shadow-md">
-        <h1 class="text-2xl font-semibold mb-4">Dashboard</h1>
+    <!-- Agrega el input de búsqueda -->
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar" class="mb-4 p-2 border border-gray-300 rounded">
 
-        <table class="min-w-full border border-gray-300">
-            <thead>
-                <tr>
-                    <th class="border border-gray-300 px-4 py-2">Columna 1</th>
-                    <th class="border border-gray-300 px-4 py-2">Columna 2</th>
-                    <th class="border border-gray-300 px-4 py-2">Columna 3</th>
-                    <th class="border border-gray-300 px-4 py-2">Columna 4</th>
-                    <th class="border border-gray-300 px-4 py-2">Columna 5</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aquí puedes agregar filas de datos según tus necesidades -->
-                <tr>
-                    <td class="border border-gray-300 px-4 py-2">Dato 1</td>
-                    <td class="border border-gray-300 px-4 py-2">Dato 2</td>
-                    <td class="border border-gray-300 px-4 py-2">Dato 3</td>
-                    <td class="border border-gray-300 px-4 py-2">Dato 4</td>
-                    <td class="border border-gray-300 px-4 py-2">Dato 5</td>
-                </tr>
-                <!-- Puedes agregar más filas según sea necesario -->
-            </tbody>
-        </table>
-    </div>
-
-</body>
+    <table class="min-w-full border border-gray-300">
+        <tr>
+            <td *ngFor="let header of tableHeaders" class="border border-gray-300 px-4 py-2 font-bold">{{ header }}</td>
+        </tr>
+        <tr *ngFor="let row of filteredTableData">
+            <td *ngFor="let cell of row" class="border border-gray-300 px-4 py-2">{{ cell }}</td>
+        </tr>
+    </table>
+</div>
