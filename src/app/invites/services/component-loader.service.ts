@@ -27,4 +27,45 @@ export class ComponentLoaderService {
       suggestions: SuggestionsComponent,
     } as { [key: string]: Type<unknown> };
   }
+
+  getComponentsList() {
+    return {
+      'start-banner': {
+        name: 'StartBannerComponent',
+        component: StartBannerComponent,
+      },
+      'family-info': {
+        name: 'FamilyInfoComponent',
+        component: FamilyInfoComponent,
+      },
+      'gift-table': {
+        name: 'GiftTableComponent',
+        component: GiftTableComponent,
+      },
+      attire: {
+        name: 'AttireComponent',
+        component: AttireComponent,
+      },
+      ceremony: {
+        name: 'CeremonyComponent',
+        component: CeremonyComponent,
+      },
+      confirmation: {
+        name: 'ConfirmationComponent',
+        component: ConfirmationComponent,
+      },
+      itinerary: {
+        name: 'ItineraryComponent',
+        component: ItineraryComponent,
+      },
+      reception: {
+        name: 'ReceptionComponent',
+        component: ReceptionComponent,
+      },
+      suggestions: {
+        name: 'SuggestionsComponent',
+        component: SuggestionsComponent,
+      },
+    } as { [key: string]: { name: string; component: Type<unknown> } };
+  }
 }
