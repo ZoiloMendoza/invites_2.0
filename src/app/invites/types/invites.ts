@@ -1,12 +1,6 @@
-export interface InviteComponent {
-  config?: {
-    [key: string]: unknown;
-  };
-}
+export type InviteComponent = Record<string, unknown>;
 
-export interface InviteConfiguration {
-  [key: string]: InviteComponent;
-}
+export type InviteConfiguration = Record<string, InviteComponent>;
 
 export interface StartBannerType extends InviteComponent {
   config: {

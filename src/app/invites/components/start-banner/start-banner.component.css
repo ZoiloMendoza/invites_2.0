@@ -1,0 +1,35 @@
+
+.tittle {
+    @apply text-7xl text-primary font-bold mt-20 ;
+    font-family:'Cinzel';
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.textContainer {
+    background-image: url("/assets/1.1.png");
+    border: 1px solid #7D5730;
+    border-radius: 50px;
+    @apply mt-auto;
+}
+.dateAndPlace {
+    font-family: 'Cinzel';
+    font-size: clamp(13px, 2.5vw, 2rem);
+    font-weight: 500;
+    @apply mt-auto text-secondary pr-5 pl-5 flex;
+}
+.containCountdown  {
+    @apply pr-10 pl-10 mb-5 mt-5;
+    width: auto;
+    border: 1px solid #7D5730;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: 'rgba(255, 255, 255, 0.2)';
+    border-radius: 50px;
+    backdrop-filter: 'blur(1px)';
+}
+.countdown {
+    height: auto;
+    font-family: "Cinzel";
+    font-size: clamp(15px, 2.2vw, 2.2rem);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    @apply text-primary flex;
+}

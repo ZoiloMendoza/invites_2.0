@@ -1,5 +1,40 @@
-<div class="bg-[url('https://placehold.co/1024x768')] h-screen flex flex-col items-center bg-no-repeat bg-cover bg-center">
-    <h1 class="text-5xl text-white mt-20">{{ title }}</h1>
-    <div class="mt-auto"> Date and place </div>
-    <div class="mb-40"> Countdown </div>
+<div
+    class="bg-[url('https://placehold.co/1024x768')] h-screen flex flex-col items-center bg-no-repeat bg-cover bg-center">
+    <h1 class={{styles.title}}>{{ config.title }}</h1>
+    <div class={{styles.textContainer}}>
+        <div class={{styles.dateAndPlace}}> 
+            <div class="flex-1 text-center">{{ date }}</div>
+            <div class="border-l-2 border-secondary mt-2 mb-2"></div>
+            <div class="flex-1 text-center m-auto">{{ place }}</div>
+        </div>
+    </div>
+    <div class={{styles.containCountdown}}>
+        <div class={{styles.countdown}}>
+            <div class="text-center">
+                {{ countdown().days }}
+                <div>Días</div>
+            </div>
+            <div class="pr-5 pl-5 pt-5">
+                :
+            </div>
+            <div class="text-center">
+                {{ countdown().days }}
+                <div>Horas</div>
+            </div>
+            <div class="pr-5 pl-5 pt-5">
+                :
+            </div>
+            <div class="text-center">
+                {{ countdown().minutes }}
+                <div>Minutos</div>
+            </div>
+            <div class="pr-5 pl-5 pt-5">
+                :
+            </div>
+            <div class="text-center">
+                {{ countdown().seconds }}
+                <div>Seg.</div>
+            </div>
+        </div>
+    </div>
 </div>

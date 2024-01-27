@@ -17,6 +17,8 @@ export class CoreComponent {
   inviteComponents = inject(ComponentLoaderService).getComponents();
 
   componetList = computed(() => {
+    console.log(this.inviteConfig());
+
     return Object.keys(this.inviteConfig());
   });
 
@@ -24,6 +26,5 @@ export class CoreComponent {
     this.weddingConfigService.getWeddingConfig('65a0b97fc7f02cbbbee982c5'),
     { initialValue: {} as InviteConfiguration },
   );
-
   constructor(private weddingConfigService: WeddingConfigService) {}
 }
