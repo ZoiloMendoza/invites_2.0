@@ -72,7 +72,6 @@ export class WeddingComponent {
         this.router.navigate([`/generator`], {
           queryParams: { wedding: response._id },
         });
-        console.log(response);
       });
   }
 
@@ -81,7 +80,5 @@ export class WeddingComponent {
     if (!weddingId) {
       return;
     }
-
-    console.log('weddingId', weddingId);
   }
 }

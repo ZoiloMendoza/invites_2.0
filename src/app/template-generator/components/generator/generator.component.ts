@@ -85,8 +85,8 @@ export class GeneratorComponent {
 
     return Object.entries(weddingTemplateConfig).map(([key]) => {
       const component = this.availableComponents()[key];
-      // console.log('Component', weddingTemplateConfig[key]);
       this.flatConfig(weddingTemplateConfig[key]);
+
       return {
         key,
         name: component.name,
@@ -109,7 +109,7 @@ export class GeneratorComponent {
         flatConfig.config[key] = value.value || '';
       });
     }
-    console.log('AYYLMAO', flatConfig);
+
     return flatConfig;
   }
 
@@ -160,7 +160,6 @@ export class GeneratorComponent {
   }
 
   saveComponentConfig() {
-    console.log('Saving');
     console.log(this.availableComponents());
   }
 
@@ -168,7 +167,7 @@ export class GeneratorComponent {
     const value = (event.target as HTMLInputElement).value;
     const newConfig = this.weddingTemplateConfig();
     newConfig[componentKey].config[fieldName].value = value;
-    console.log('newConfig', newConfig);
+
     this.weddingTemplateConfig.set({ ...newConfig });
   }
 
@@ -182,10 +181,9 @@ export class GeneratorComponent {
         const imageUrlData = reader.result as string;
         const dimensions = newConfig[componentKey].defaults.config[fieldName]
           .dimensions || { width: 0, height: 0 };
-        // console.log('Dimensions', dimensions);
-        // console.log('Original Image', imageUrlData);
+
         const resizeImage = await this.imageResizer(imageUrlData, dimensions);
-        // console.log('Rezied', resizeImage);
+
         newConfig[componentKey].defaults.config[fieldName].value = resizeImage;
         this.availableComponents.set({ ...newConfig });
       };
