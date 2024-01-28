@@ -1,8 +1,8 @@
-<div
-    class="bg-[url('https://placehold.co/1024x768')] h-screen flex flex-col items-center bg-no-repeat bg-cover bg-center">
+<div class="h-screen flex flex-col items-center bg-no-repeat bg-cover bg-center"
+    [style]="'background-image: url(' + (config.backgroundImage || 'https://placehold.co/1024x768') + ');'">
     <h1 class={{styles.title}}>{{ config.title }}</h1>
     <div class={{styles.textContainer}}>
-        <div class={{styles.dateAndPlace}}> 
+        <div class={{styles.dateAndPlace}}>
             <div class="flex-1 text-center">{{ date }}</div>
             <div class="border-l-2 border-secondary mt-2 mb-2"></div>
             <div class="flex-1 text-center m-auto">{{ place }}</div>

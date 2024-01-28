@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ConfigInput {}
+interface StyleInput {}
 
 @Component({
   selector: 'app-attire',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './attire.component.html',
   styleUrl: './attire.component.css',
 })
-export class AttireComponent {}
+export class AttireComponent {
+  @Input({ required: true }) config!: ConfigInput;
+  @Input({ required: true }) styles!: StyleInput;
+}

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ConfigInput {}
+interface StyleInput {}
 
 @Component({
   selector: 'app-itinerary',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './itinerary.component.html',
   styleUrl: './itinerary.component.css',
 })
-export class ItineraryComponent {}
+export class ItineraryComponent {
+  @Input({ required: true }) config!: ConfigInput;
+  @Input({ required: true }) styles!: StyleInput;
+}

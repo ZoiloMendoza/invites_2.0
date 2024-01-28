@@ -17,8 +17,6 @@ export class CoreComponent {
   inviteComponents = inject(ComponentLoaderService).getComponents();
 
   componetList = computed(() => {
-    console.log(this.inviteConfig());
-
     return Object.keys(this.inviteConfig());
   });
 

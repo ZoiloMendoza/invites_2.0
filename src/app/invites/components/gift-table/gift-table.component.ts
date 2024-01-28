@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ConfigInput {}
+interface StyleInput {}
 
 @Component({
   selector: 'app-gift-table',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './gift-table.component.html',
   styleUrl: './gift-table.component.css',
 })
-export class GiftTableComponent {}
+export class GiftTableComponent {
+  @Input({ required: true }) config!: ConfigInput;
+  @Input({ required: true }) styles!: StyleInput;
+}

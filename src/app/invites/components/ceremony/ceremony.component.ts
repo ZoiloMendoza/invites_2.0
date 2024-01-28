@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ConfigInput {}
+interface StyleInput {}
 
 @Component({
   selector: 'app-ceremony',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './ceremony.component.html',
   styleUrl: './ceremony.component.css',
 })
-export class CeremonyComponent {}
+export class CeremonyComponent {
+  @Input({ required: true }) config!: ConfigInput;
+  @Input({ required: true }) styles!: StyleInput;
+}

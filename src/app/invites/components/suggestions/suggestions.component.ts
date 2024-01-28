@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ConfigInput {}
+interface StyleInput {}
 
 @Component({
   selector: 'app-suggestions',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
   templateUrl: './suggestions.component.html',
   styleUrl: './suggestions.component.css',
 })
-export class SuggestionsComponent {}
+export class SuggestionsComponent {
+  @Input({ required: true }) config!: ConfigInput;
+  @Input({ required: true }) styles!: StyleInput;
+}

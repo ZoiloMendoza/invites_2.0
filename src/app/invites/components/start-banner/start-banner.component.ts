@@ -5,6 +5,7 @@ interface ConfigInput {
   title: string;
   dateAndPlace: string;
   date: string;
+  backgroundImage: string;
   // Agrega otras propiedades según sea necesario
 }
 interface StyleInput {
@@ -30,7 +31,6 @@ type countdownType = {
   styleUrl: './start-banner.component.css',
 })
 export class StartBannerComponent implements OnInit {
-  //@Input({ required: true }) title!: string;
   @Input({ required: true }) config!: ConfigInput;
   @Input({ required: true }) styles!: StyleInput;
 
