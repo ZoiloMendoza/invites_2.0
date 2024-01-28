@@ -1,15 +1,17 @@
 <div class="h-full">
-  @for (component of componetList(); track component) {
-    @if (inviteConfig()[component] && inviteConfig()[component]) {
-      <ng-container
-        *ngComponentOutlet="
-          inviteComponents[component];
-          inputs: inviteConfig()[component];
-        "
-      />
+  @if (inviteConfig()) {
+    @for (component of componetList(); track component) {
+      @if (inviteConfig()[component] && inviteConfig()[component]) {
+        <ng-container
+          *ngComponentOutlet="
+            inviteComponents[component];
+            inputs: inviteConfig()[component];
+          "
+        />
 
-    } @else if (inviteConfig()[component]) {
-      <ng-container *ngComponentOutlet="inviteComponents[component]" />
+      } @else if (inviteConfig()[component]) {
+        <ng-container *ngComponentOutlet="inviteComponents[component]" />
+      }
     }
   }
 </div>

@@ -1,4 +1,7 @@
-import { InviteComponentConfig } from '../../invites/types/invites';
+import {
+  InviteComponentConfig,
+  InviteConfiguration,
+} from '../../invites/types/invites';
 
 export interface CreateWeddingRequest {
   name: string;
@@ -18,7 +21,7 @@ export interface WeddingType {
     lastSent: Date;
   };
   planners: string[];
-  config: object;
+  config: InviteConfiguration;
   messageStrings: {
     date: string;
     hi: string;

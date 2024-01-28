@@ -160,7 +160,11 @@ export class GeneratorComponent {
   }
 
   saveComponentConfig() {
-    console.log(this.availableComponents());
+    this.generatorService
+      .updateWeddingConfig(this.selectedWedding(), this.weddingTemplateConfig())
+      .subscribe(() => {
+        console.log('saved');
+      });
   }
 
   onInputUpdate(event: KeyboardEvent, fieldName: string, componentKey: string) {

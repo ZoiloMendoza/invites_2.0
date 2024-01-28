@@ -4,7 +4,7 @@ import { GeneratorComponent } from './template-generator/components/generator/ge
 import { WeddingComponent } from './template-generator/components/wedding/wedding.component';
 
 export const routes: Routes = [
-  { path: 'invitation', component: CoreComponent },
+  { path: 'invitation/:path', component: CoreComponent },
   { path: 'generator', component: GeneratorComponent },
   { path: 'weddingCreator', component: WeddingComponent },
 ];
